@@ -1,9 +1,9 @@
 const productos = [
-  { id: 1, nombre: "Café 500g", precio: 25000, imagen:"cafe-500.jpg" },
-  { id: 2, nombre: "Café 250g", precio: 15000, imagen:"cafe-250.jpg" },
-  { id: 3, nombre: "Frutos Rojos", precio: 12000, imagen:"frutos-rojos.jpg" },
-  { id: 4, nombre: "Frutos Amarillos", precio: 12000, imagen:"frutos-amarillos.jpg" },
-  { id: 5, nombre: "Frutos Verdes", precio: 12000, imagen:"frutos-verdes.jpg" }
+  { id: 1, nombre: "Café 500g", precio: 56000, imagen:"cafe-500.jpg" },
+  { id: 2, nombre: "Café 250g", precio: 31000, imagen:"cafe-250.jpg" },
+  { id: 3, nombre: "Frutos Rojos", precio: 19500, imagen:"frutos-rojos.jpg" },
+  { id: 4, nombre: "Frutos Amarillos", precio: 19500, imagen:"frutos-amarillos.jpg" },
+  { id: 5, nombre: "Frutos Verdes", precio: 19500, imagen:"frutos-verdes.jpg" }
 ];
 
 let carrito = [];
@@ -102,3 +102,4 @@ function mostrarSlide() {
 }
 
 setInterval(mostrarSlide, 3000); // Cambia cada 3 segundos
+
