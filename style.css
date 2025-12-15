@@ -239,3 +239,27 @@ footer {
 .redes-sociales a i {
   font-size: 1.2em;
 }
+img {
+  width: 100%;
+  height: auto; /* Mantiene proporción */
+}
+@media (max-width: 600px) {
+ .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+ .slide {
+  width: 100%;
+  height: auto; /* Ajusta automáticamente */
+  object-fit: cover; /* Mantiene proporción y rellena el contenedor */
+}
+
+}
+#productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
