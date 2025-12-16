@@ -359,3 +359,16 @@
 #btn-carrito:hover {
   transform: scale(1.1);
 }
+/* =========================
+   ESPACIO PARA CARRITO EN MÓVIL
+========================= */
+@media (max-width: 600px) {
+  footer {
+    padding-bottom: 100px; /* espacio para el carrito */
+  }
+}
+@media (max-width: 600px) {
+  #carrito-flotante {
+    bottom: 90px; /* sube el carrito */
+  }
+}
