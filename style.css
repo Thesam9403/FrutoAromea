@@ -369,6 +369,30 @@
 }
 @media (max-width: 600px) {
   #carrito-flotante {
-    bottom: 90px; /* sube el carrito */
+    bott/* =========================
+   CARRITO BIEN OCULTO EN MÓVIL
+========================= */
+@media (max-width: 600px) {
+
+  #carrito-flotante {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    bottom: 90px;
+    top: auto;
+    max-height: 45vh;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+  }
+
+  /* OCULTO: se baja casi todo */
+  #carrito-flotante:not(.activo) {
+    transform: translateY(120%);
+  }
+
+  /* VISIBLE */
+  #carrito-flotante.activo {
+    transform: translateY(0);
   }
 }
+
