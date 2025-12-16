@@ -1,7 +1,7 @@
   :root {
-    --color-principal: #4CAF50;
+    --color-principal: #6c99d3;
     --color-secundario: #FFD700;
-    --color-fondo: #fff8f0;
+    --color-fondo: #fcfcfc;
     --color-boton-hover: #45a049;
     --color-texto: #333;
   }
@@ -399,4 +399,14 @@
     transform: translateY(0); /* Lo vuelve visible */
     bottom: 90px; /* Ajusta la distancia para que no tape nada */
   }
+}
+.btn-comprar {
+  background-color: #25D366;
+  color: white;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-comprar:hover {
+  background-color: #1ebe5d;
 }

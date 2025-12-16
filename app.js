@@ -15,7 +15,7 @@ productos.forEach(p => {
   div.innerHTML = `
     <img src="${p.imagen}" alt="${p.nombre}">
     <h3>${p.nombre}</h3>
-    <p>$${p.precio}</p>
+    <p>${formatoCOP(p.precio)}</p>
     <button onclick="agregarAlCarrito(${p.id}, event)">Agregar</button>
   `;
   productosGrid.appendChild(div);
@@ -62,8 +62,17 @@ function actualizarCarrito() {
   });
 
   const total = carrito.reduce((acc,p)=> acc + p.precio*p.cantidad, 0);
-  document.getElementById('total').textContent = total;
+  document.getElementById('total').textContent = formatoCOP(total);
+
 }
+function formatoCOP(valor) {
+  return valor.toLocaleString("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 0
+  });
+}
+
 
 function cambiarCantidad(id, valor) {
   const item = carrito.find(p=>p.id===id);
@@ -107,4 +116,15 @@ if (window.innerWidth <= 600) {
 function toggleCarrito() {
   const carrito = document.getElementById("carrito-flotante");
   carrito.classList.toggle("activo");
+}
+function comprarWhatsApp() {
+  let mensaje = "Hola, quiero hacer el siguiente pedido:%0A";
+  carrito.forEach(p => {
+    mensaje += `• ${p.nombre} x${p.cantidad} = ${formatoCOP(p.precio * p.cantidad)}%0A`;
+  });
+
+  const total = carrito.reduce((acc,p)=> acc + p.precio*p.cantidad, 0);
+  mensaje += `%0ATotal: ${formatoCOP(total)}`;
+
+  window.open(`https://wa.me/573117956313?text=${mensaje}`, "_blank");
 }
