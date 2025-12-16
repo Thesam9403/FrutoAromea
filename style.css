@@ -369,30 +369,34 @@
 }
 @media (max-width: 600px) {
   #carrito-flotante {
-    bott/* =========================
+    bottom: 90px; /* sube el carrito */
+  }
+}
+/* =========================
    CARRITO BIEN OCULTO EN MÓVIL
 ========================= */
 @media (max-width: 600px) {
-
   #carrito-flotante {
-    width: 90%;
-    left: 5%;
-    right: 5%;
-    bottom: 90px;
+    width: 100%; /* Se asegura que ocupe el 100% del ancho */
+    left: 0;
+    right: 0;
+    bottom: 0; /* Se coloca en la parte inferior */
     top: auto;
-    max-height: 45vh;
+    max-height: 45vh; /* Ajusta el tamaño */
     overflow-y: auto;
-    transition: transform 0.3s ease;
+    position: fixed;
+    transition: transform 0.3s ease, bottom 0.3s ease;
   }
 
-  /* OCULTO: se baja casi todo */
+  /* OCULTO: hace desaparecer todo el carrito */
   #carrito-flotante:not(.activo) {
-    transform: translateY(120%);
+    transform: translateY(100%); /* Sube el carrito fuera de la pantalla */
+    bottom: -100px; /* Lo aleja más de la vista */
   }
 
   /* VISIBLE */
   #carrito-flotante.activo {
-    transform: translateY(0);
+    transform: translateY(0); /* Lo vuelve visible */
+    bottom: 90px; /* Ajusta la distancia para que no tape nada */
   }
 }
-
